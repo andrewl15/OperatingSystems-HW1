@@ -148,7 +148,7 @@ int main()
         printf("Use (2) to delete a student from list\n");
         printf("Use (3) to print the list from the start\n");
         printf("Use (4) to print the list in reverse\n");
-        printf("Use (5) to exit the application\n");
+        printf("Use (5) to exit the application and wipe list\n");
         printf("=============================================\n");
         fgets(input, BUFFERSIZE , stdin);
         if(input[0] == '1'){
