@@ -44,7 +44,7 @@ studentObject* addNewStudent(){
     char fn[BUFFERSIZE];
     char stat[BUFFERSIZE];
     int len;
-    printf("Please enter students last name: ");
+    printf("student last name: ");
      if (fgets(ln, BUFFERSIZE , stdin) != NULL){
          len = (int) strlen(ln);
          ln[len - 1] = '\0';
@@ -52,23 +52,23 @@ studentObject* addNewStudent(){
          student->lastname = (char *) malloc(len);
          strcpy(student->lastname, ln);
      }
-     printf("Please enter students first name: ");
+     printf("student first name: ");
      if (fgets(fn, BUFFERSIZE , stdin) != NULL){
          len = (int) strlen(fn);
          fn[len - 1] = '\0';
          student->firstname = (char *) malloc(len);
          strcpy(student->firstname, fn);
      }
-     printf("Please enter students status: ");
+     printf("student status: ");
      if (fgets(stat, BUFFERSIZE , stdin) != NULL){
          len = (int) strlen(stat);
          stat[len - 1] = '\0';
          student->status = (char *) malloc(len);
          strcpy(student->status, stat);
      }
-     printf("Please enter students id: ");
+     printf("new student id: ");
      scanf("%ld",&(student->ID));
-     printf("Please enter students graduation year: ");
+     printf("new student graduation year: ");
      scanf("%d",&(student->year));
      printf("Successfully created student!\n");
      student->next=student->prev= NULL;
@@ -101,7 +101,7 @@ void freeStudent(studentObject *student){
 void deletestudent(){
     struct node* temp = head;
     char findMe[BUFFERSIZE];
-    printf("Enter students lastname to be deleted: ");
+    printf("Enter student name to be deleted: ");
     scanf("%s", findMe);
     while(temp){
         if (strcmp(temp->lastname,findMe)){
