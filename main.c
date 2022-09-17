@@ -101,7 +101,7 @@ void freeStudent(studentObject *student){
 void deletestudent(){
     struct node* temp = head;
     char findMe[BUFFERSIZE];
-    printf("Enter student name to be deleted: ");
+    printf("Enter student last name to be deleted: ");
     scanf("%s", findMe);
     while(temp){
         if (strcmp(temp->lastname,findMe)){
