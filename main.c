@@ -20,6 +20,8 @@ typedef struct node{
 struct node* head = NULL;
 struct node* tail = NULL;
 
+/* Takes in a student object to be pushed to the end of the list, if the list is empty, set head and tail to student, if not, iterate to the end of the list
+and push the new student node and setting tail to the new node*/
 void push(studentObject *student){
     struct node* temp = head;
     if(head == NULL && tail == NULL){
@@ -37,7 +39,8 @@ void push(studentObject *student){
     }
     return;
 }
-//
+/* asks user for input: Student last name, student First name, student status, and student ID. Allocating memory for the last name, first namem
+and for status. Afterwards, setting new student node with all attributes */
 studentObject* addNewStudent(){
     studentObject *student;
     char ln[BUFFERSIZE];
@@ -91,6 +94,7 @@ void printIR(){
         temp = temp->prev;
     }
 }
+//free student info before removing from DLL
 void freeStudent(studentObject *student){
     free(student->lastname);
     free(student->firstname);
@@ -136,7 +140,7 @@ void deleteList(){
     }
     head = tail = NULL;
 }
- 
+/* Creates endless loop for user to choose between 5 options of what they would like to do, choosing 5 ends the program and returns*/
 int main()
 {   
     char input[BUFFERSIZE];
